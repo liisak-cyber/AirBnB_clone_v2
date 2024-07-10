@@ -4,6 +4,7 @@ from fabric.api import local
 from datetime import datetime
 import os
 
+
 def do_pack():
     """Creates a .tgz archive from the contents of the web_static folder."""
     try:
@@ -14,7 +15,8 @@ def do_pack():
         # Generate current time in UTC
         now = datetime.utcnow()
 
-        # Format the archive name web_static_<year><month><day><hour><minute><second>.tgz
+        # Format the archive name
+        # web_static_<year><month><day><hour><minute><second>.tgz
         archive_name = "web_static_{}{}{}{}{}{}.tgz".format(
             now.year, now.month, now.day, now.hour, now.minute, now.second)
 
@@ -30,4 +32,3 @@ def do_pack():
     except Exception as e:
         print(e)
         return None
-
