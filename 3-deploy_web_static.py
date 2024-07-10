@@ -21,7 +21,8 @@ def do_pack():
         local("mkdir -p versions")
         local("tar -cvzf {} web_static".format(archive_path))
         return archive_path
-    except Exception:
+    except Exception as e:
+        print(e)
         return None
 
 def do_deploy(archive_path):
@@ -75,3 +76,14 @@ def deploy():
         return False
     
     return do_deploy(archive_path)
+
+if __name__ == "__main__":
+    # Example 1: Script creates and deploys locally a new version with my_index.html inside
+    with open("web_static/my_index.html", "w") as f:
+        f.write("<html><head></head><body>New version with my_index.html</body></html>")
+    print("Creating and deploying new version with my_index.html...")
+    deploy()
+    
+    # Example 2: Script creates and deploys locally a new version
+    print("\nCreating and deploying new version...")
+    deploy()
