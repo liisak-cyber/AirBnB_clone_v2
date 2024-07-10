@@ -22,8 +22,8 @@ echo "<html>
 # Create symbolic link
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 
-# Give ownership of the /data/ folder to ubuntu user and group
-sudo chown -R ubuntu:ubuntu /data/
+# Give ownership of the /data/ folder to www-data user and group
+sudo chown -R www-data:www-data /data/
 
 # Update Nginx configuration to serve content
 config="server {
