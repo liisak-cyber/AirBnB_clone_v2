@@ -8,7 +8,7 @@ import os
 
 # Define remote user and hosts
 env.user = 'ubuntu'
-env.hosts = ['<IP web-01>', '<IP web-02>']
+env.hosts = ['100.26.172.141', '54.157.147.12']
 
 def do_deploy(archive_path):
     """
